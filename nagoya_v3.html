@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html>
+<head>
+            <style></style>
+        </head>
+        <body>
+            
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>名古屋賞楓之旅 2025 | 手機版</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
+    
+    <!-- Flaticon Uicons -->
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        :root {
+            --maple-orange: #D77A3E;
+            --deep-red: #9C3D30;
+            --text-dark: #2C2416;
+            --text-gray: #5C5C5C;
+            --bg-cream: #FAF6F1;
+            --blue: #4A90C8;
+            --green: #4CAF50;
+            --orange-alert: #FF9800;
+        }
+        
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.5;
+            font-size: 15px;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--deep-red) 0%, var(--maple-orange) 100%);
+            color: white;
+            padding: 1rem 1rem 0.5rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header h1 {
+            font-size: 1.3rem;
+            font-weight: 900;
+            margin-bottom: 0.3rem;
+        }
+        
+        .header .date {
+            font-size: 0.85rem;
+            opacity: 0.95;
+            margin-bottom: 0.8rem;
+        }
+        
+        /* Navigation Menu */
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            gap: 0.3rem;
+            padding: 0 0.5rem 0.8rem;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .nav-menu::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .nav-menu-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 1.5px solid rgba(255,255,255,0.3);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        
+        .nav-menu-btn.active {
+            background: white;
+            color: var(--deep-red);
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0.8rem;
+        }
+        
+        /* Day Section */
+        .day-section {
+            scroll-margin-top: 120px;
+            margin-bottom: 1rem;
+        }
+        
+        /* Action Items */
+        .action-items {
+            background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%);
+            border-left: 4px solid var(--orange-alert);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        .action-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--deep-red);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        
+        .action-list {
+            list-style: none;
+        }
+        
+        .action-item {
+            background: white;
+            padding: 0.7rem;
+            margin-bottom: 0.6rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        
+        .action-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .action-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            min-width: 20px;
+            cursor: pointer;
+            accent-color: var(--green);
+        }
+        
+        .action-item label {
+            flex: 1;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        
+        .action-item.checked {
+            opacity: 0.5;
+            text-decoration: line-through;
+        }
+        
+        .action-badge {
+            padding: 0.2rem 0.5rem;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        
+        .action-badge.urgent {
+            background: #FFEBEE;
+            color: #C62828;
+        }
+        
+        .action-badge.soon {
+            background: #FFF3E0;
+            color: #E65100;
+        }
+        
+        /* Day Header */
+        .day-header {
+            background: white;
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--blue);
+        }
+        
+        .day-title {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .day-number {
+            background: var(--blue);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 1rem;
+            font-weight: 900;
+        }
+        
+        .day-date {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+        
+        .day-subtitle {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            line-height: 1.3;
+        }
+        
+        /* Timeline */
+        .timeline-section {
+            background: white;
+            border-radius: 12px;
+            padding: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 1rem;
+        }
+        
+        .section-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--blue);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0.6rem;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--blue);
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+        
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1.4rem;
+            top: 0.2rem;
+            width: 11px;
+            height: 11px;
+            background: var(--maple-orange);
+            border-radius: 50%;
+            border: 2.5px solid white;
+            box-shadow: 0 0 0 1.5px var(--blue);
+        }
+        
+        .timeline-time {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--blue);
+            margin-bottom: 0.3rem;
+        }
+        
+        .timeline-event {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .timeline-event i {
+            color: var(--maple-orange);
+            font-size: 1.1rem;
+            min-width: 1.1rem;
+        }
+        
+        .timeline-note {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+        
+        /* Status Badges */
+        .status-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 0.5rem;
+        }
+        
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .badge i {
+            font-size: 0.85rem;
+        }
+        
+        .badge.confirmed {
+            background: #E8F5E9;
+            color: #2E7D32;
+        }
+        
+        .badge.to-book {
+            background: #FFF3E0;
+            color: #E65100;
+        }
+        
+        .badge.before-trip {
+            background: #FFF9C4;
+            color: #F57F17;
+        }
+        
+        .badge.suggest {
+            background: #E3F2FD;
+            color: #1565C0;
+        }
+        
+        .badge.paid {
+            background: #E8F5E9;
+            color: #388E3C;
+        }
+        
+        .badge.queue {
+            background: #F5F5F5;
+            color: #616161;
+        }
+        
+        /* Flight Info */
+        .flight-info {
+            background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+            border-left: 3px solid var(--blue);
+            border-radius: 8px;
+            padding: 0.7rem;
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+        }
+        
+        .flight-info-row {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .flight-info-row:last-child {
+            margin-bottom: 0;
+        }
+        
+        .flight-info strong {
+            color: var(--blue);
+            min-width: 70px;
+            font-size: 0.8rem;
+        }
+        
+        .flight-highlight {
+            background: white;
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            font-weight: 700;
+            color: var(--deep-red);
+        }
+        
+        /* Map Button */
+        .map-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            width: 100%;
+            background: white;
+            color: var(--blue);
+            padding: 0.7rem;
+            border: 2px solid var(--blue);
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-top: 0.6rem;
+            transition: all 0.2s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .map-btn:active {
+            background: var(--blue);
+            color: white;
+            transform: scale(0.98);
+        }
+        
+        .map-btn i {
+            font-size: 1.1rem;
+        }
+        
+        /* Divider */
+        .day-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--maple-orange), transparent);
+            margin: 1.5rem 0;
+        }
+        
+        /* Loading Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.4s ease-out;
+        }
+        
+        /* Safe Area for iPhone */
+        @supports (padding-bottom: env(safe-area-inset-bottom)) {
+            .container {
+                padding-bottom: calc(0.8rem + env(safe-area-inset-bottom));
+            }
+        }
+    </style>
+
+
+    <header class="header" id="top">
+        <h1>🍁名古屋賞楓之旅🍁</h1>
+        <div class="date">2025.11.27 - 12.01</div>
+        
+        <!-- Navigation Menu -->
+        <nav class="nav-menu">
+            <a href="#day1" class="nav-menu-btn">DAY 1</a>
+            <a href="#day2" class="nav-menu-btn">DAY 2</a>
+            <a href="#day3" class="nav-menu-btn">DAY 3</a>
+            <a href="#day4" class="nav-menu-btn">DAY 4</a>
+            <a href="#day5" class="nav-menu-btn">DAY 5</a>
+        </nav>
+    </header>
+    
+    <div class="container">
+        
+        <!-- ==================== DAY 1 ==================== -->
+        <section id="day1" class="day-section">
+            <!-- Action Items -->
+            <div class="action-items fade-in">
+                <div class="action-title">
+                    <i class="fi fi-rr-exclamation"></i>
+                    待辦事項
+                </div>
+                <ul class="action-list">
+                    <li class="action-item">
+                        <input type="checkbox" id="task1-1" onclick="toggleTask(this)">
+                        <label for="task1-1">11/17 預約壽喜燒今半</label>
+                        <span class="action-badge urgent">11/17</span>
+                    </li>
+                    <li class="action-item">
+                        <input type="checkbox" id="task1-2" onclick="toggleTask(this)">
+                        <label for="task1-2">現場購買名花之里套票</label>
+                        <span class="action-badge soon">¥3,300</span>
+                    </li>
+                    <li class="action-item">
+                        <input type="checkbox" id="task1-3" onclick="toggleTask(this)">
+                        <label for="task1-3">11/26 確認機場接送</label>
+                        <span class="action-badge urgent">前一天</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Day Header -->
+            <div class="day-header fade-in">
+                <div class="day-title">
+                    <span class="day-number">DAY 1</span>
+                    <span class="day-date">11/27 (四)</span>
+                </div>
+                <div class="day-subtitle">名古屋抵達 → 名花之里點燈</div>
+            </div>
+            
+            <!-- Timeline -->
+            <div class="timeline-section fade-in">
+                <h2 class="section-title">
+                    <i class="fi fi-rr-clock"></i>
+                    今日行程
+                </h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-time">03:45</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-car-side"></i>
+                            家 → 桃園機場
+                        </div>
+                        <div class="timeline-note">機場接送</div>
+                        <div class="status-badges">
+                            <span class="badge before-trip">
+                                <i class="fi fi-rr-alarm-clock"></i>
+                                11/26 確認
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">07:35 - 11:05</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-plane-departure"></i>
+                            TPE → NGO
+                        </div>
+                        <div class="status-badges">
+                            <span class="badge confirmed">
+                                <i class="fi fi-rr-check"></i>
+                                已預訂
+                            </span>
+                        </div>
+                        <div class="flight-info">
+                            <div class="flight-info-row">
+                                <strong>航班:</strong>
+                                <span class="flight-highlight">CI154</span>
+                            </div>
+                            <div class="flight-info-row">
+                                <strong>起飛:</strong>
+                                <span>桃園 T2 → 07:35</span>
+                            </div>
+                            <div class="flight-info-row">
+                                <strong>抵達:</strong>
+                                <span>中部機場 T1 → 11:05</span>
+                            </div>
+                            <div class="flight-info-row">
+                                <strong>備註:</strong>
+                                <span>領行李約40分鐘</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">11:47</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-train-side"></i>
+                            名鐵特急 機場 → 名鐵名古屋站
+                        </div>
+                        <div class="timeline-note">約40分鐘車程，距離飯店4分鐘</div>
+                        <div class="status-badges">
+                            <span class="badge paid">
+                                <i class="fi fi-rr-money"></i>
+                                已付款
+                            </span>
+                        </div>
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%90%8D%E9%90%B5%E5%90%8D%E5%8F%A4%E5%B1%8B%E7%AB%99" target="_blank" class="map-btn">
+                            <i class="fi fi-rr-marker"></i>
+                           名鐵名古屋站 
+                        </a>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">12:35</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-suitcase-alt"></i>
+                            寄放行李
+                        </div>
+                        <div class="timeline-note">三井花園飯店名古屋普米爾</div>
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=三井ガーデンホテル名古屋プレミア" target="_blank" class="map-btn">
+                            <i class="fi fi-rr-marker"></i>
+                            飯店位置
+                        </a>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">13:30</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-pot"></i>
+                            午餐：壽喜燒 今半
+                        </div>
+                        <div class="timeline-note">建議提前10分鐘抵達</div>
+                        <div class="status-badges">
+                            <span class="badge to-book">
+                                <i class="fi fi-rr-calendar"></i>
+                                11/17 需預約
+                            </span>
+                        </div>
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=今半+名古屋" target="_blank" class="map-btn">
+                            <i class="fi fi-rr-marker"></i>
+                            餐廳位置
+                        </a>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">15:00</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-key"></i>
+                            Check-in 入住
+                        </div>
+                        <div class="timeline-note">三井花園飯店名古屋普米爾</div>
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=三井ガーデンホテル名古屋プレミア" target="_blank" class="map-btn">
+                            <i class="fi fi-rr-marker"></i>
+                            飯店位置
+                        </a>
+                        
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">15:30</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-subway"></i>
+                            出發名花之里
+                        </div>
+                        <div class="flight-info">
+                            <div class="flight-info-row">
+                                <strong>套票名稱</strong>
+                                <span class="flight-highlight">なばなの里イルミネーション 近鉄電車＆バス割引セットきっぷ</span>
+                            </div>
+                            <div class="flight-info-row">
+                                <strong>近鐵電車票：</strong>
+                                <span>近鐵名古屋站往返近鐵長島站的來回車票</span>
+                            </div>
+                            <div class="flight-info-row">
+                                <strong>接駁巴士票：</strong>
+                                <span> 近鐵長島站往返名花之里的來回巴士票券</span>
+                            </div>
+                            <div class="flight-info-row">
+                                <strong>入園門票：</strong>
+                                <span>可直接入園的門票</span>
+                            </div>
+                            <div class="flight-info-row">
+                                <strong>園內消費券：</strong>
+                                <span>兩張各500日圓的消費券，可在園內指定店家使用</span>
+                            </div>
+                        </div>
+                         <div class="timeline-note">從車站前的公車站搭乘「三重巴士」往名花之里的公車。要上車前只要看明有寫「直通なばなの里（直通名花之里）」的顯示板即可</div>
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=なばなの里" target="_blank" class="map-btn">
+                            <i class="fi fi-rr-marker"></i>
+                            名花之里位置
+                        </a>
+                        <a href="https://ksk.tw/2024-01-15-2412/" target="_blank" class="map-btn">
+                            <i class="fi fi-rr-marker"></i>
+                            行程參考
+                        </a>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">16:30 - 19:30</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-sparkles"></i>
+                            在名花之里看夜間點燈
+                        </div>
+                        <div class="timeline-note">晚餐順便在園內用餐</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">19:30</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-arrow-turn-down-left"></i>
+                            準備回程
+                        </div>
+                        <div class="timeline-note">套票回程車票</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">20:30</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-bed-alt"></i>
+                            回飯店休息
+                        </div>
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=三井ガーデンホテル名古屋プレミア" target="_blank" class="map-btn">
+                            <i class="fi fi-rr-marker"></i>
+                            飯店位置
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="day-divider"></div>
+        
+        <!-- ==================== DAY 2 ==================== -->
+        <section id="day2" class="day-section">
+            <!-- Day Header -->
+            <div class="day-header fade-in">
+                <div class="day-title">
+                    <span class="day-number">DAY 2</span>
+                    <span class="day-date">11/28 (五)</span>
+                </div>
+                <div class="day-subtitle">賞楓一日遊</div>
+            </div>
+            
+            <!-- Timeline -->
+            <div class="timeline-section fade-in">
+                <h2 class="section-title">
+                    <i class="fi fi-rr-clock"></i>
+                    今日行程
+                </h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-time">06:30 - 09:30</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-coffee"></i>
+                            飯店早餐
+                        </div>
+                        <div class="timeline-note">早餐6:30開始供應，可以早點吃完再回房間休息 </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">09:50</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-location-arrow"></i>
+                            Ministop 名古屋站西店集合
+                        </div>
+                        <div class="timeline-note">走路過去約10~15分 (可以準備東西吃 午餐要自理 他建議品嚐當地美食 但我還沒查)</div>
+                        <div class="status-badges">
+                            <span class="badge confirmed">
+                                <i class="fi fi-rr-check"></i>
+                                已預訂 KKday
+                            </span>
+                        </div>
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=Ministop+名古屋站西店" target="_blank" class="map-btn">
+                            <i class="fi fi-rr-marker"></i>
+                            集合地點
+                        </a>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">10:00 - 12:00</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-leaf-maple"></i>
+                            永保寺 賞楓
+                        </div>
+                        <div class="timeline-note">車程1小時,停留1小時</div>
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=永保寺+岐阜" target="_blank" class="map-btn">
+                            <i class="fi fi-rr-marker"></i>
+                            永保寺位置
+                        </a>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">13:00 - 14:00</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-flower"></i>
+                            四季櫻公園
+                        </div>
+                        <div class="timeline-note">車程1小時,停留1小時,午餐自理</div>
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=四季桜公園" target="_blank" class="map-btn">
+                            <i class="fi fi-rr-marker"></i>
+                            四季櫻公園
+                        </a>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">14:00 - 18:30</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-leaf-maple"></i>
+                            香嵐溪 賞楓
+                        </div>
+                        <div class="timeline-note">會在這裡停留2-3小時,希望能看到夜間點燈</div>
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=香嵐渓" target="_blank" class="map-btn">
+                            <i class="fi fi-rr-marker"></i>
+                            香嵐溪位置
+                        </a>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">18:30 - 20:00</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-bus"></i>
+                            回程
+                        </div>
+                        <div class="timeline-note">返回名鐵名古屋站，回來可能要8點多</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">20:30</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-utensils"></i>
+                            晚餐：豬排飯
+                        </div>
+                        <div class="timeline-note">Katuretu MATUMURA 約¥3,000</div>
+                        <div class="status-badges">
+                            <span class="badge queue">
+                                <i class="fi fi-rr-hourglass"></i>
+                                現場等候
+                            </span>
+                        </div>
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=Katuretu+MATUMURA+名古屋" target="_blank" class="map-btn">
+                            <i class="fi fi-rr-marker"></i>
+                            餐廳位置
+                        </a>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">21:30</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-bed-alt"></i>
+                            回飯店休息
+                        </div>
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=三井ガーデンホテル名古屋プレミア" target="_blank" class="map-btn">
+                            <i class="fi fi-rr-marker"></i>
+                            飯店位置
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="day-divider"></div>
+        
+        <!-- ==================== DAY 3 ==================== -->
+        <section id="day3" class="day-section">
+            <!-- Action Items -->
+            <div class="action-items fade-in">
+                <div class="action-title">
+                    <i class="fi fi-rr-exclamation"></i>
+                    待辦事項
+                </div>
+                <ul class="action-list">
+                    <li class="action-item">
+                        <input type="checkbox" id="task3-1" onclick="toggleTask(this)">
+                        <label for="task3-1">退房並換飯店</label>
+                        <span class="action-badge soon">08:30</span>
+                    </li>
+                    <li class="action-item">
+                        <input type="checkbox" id="task3-2" onclick="toggleTask(this)">
+                        <label for="task3-2">鰻魚飯建議提早到</label>
+                        <span class="action-badge soon">11:30前</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Day Header -->
+            <div class="day-header fade-in">
+                <div class="day-title">
+                    <span class="day-number">DAY 3</span>
+                    <span class="day-date">11/29 (六)</span>
+                </div>
+                <div class="day-subtitle">銀杏 → 鰻魚飯 → 名古屋城</div>
+            </div>
+            
+            <!-- Timeline -->
+            <div class="timeline-section fade-in">
+                <h2 class="section-title">
+                    <i class="fi fi-rr-clock"></i>
+                    今日行程
+                </h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-time">06:30 - 08:30</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-coffee"></i>
+                            飯店早餐
+                        </div>
+                        <div class="timeline-note">早餐6:30開始供應，可以早點吃完再回房間休息 </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">08:30 - 09:30</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-suitcase-alt"></i>
+                            退房並換飯店
+                        </div>
+                        <div class="timeline-note">三井花園 → 王子飯店天空塔</div>
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=名古屋王子大飯店天空塔" target="_blank" class="map-btn">
+                            <i class="fi fi-rr-marker"></i>
+                            飯店位置
+                        </a>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">09:30 - 11:30</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-tree"></i>
+                            祖父江銀杏公園
+                        </div>
+                        <div class="timeline-note">車程1小時,停留1小時</div>
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=祖父江銀杏" target="_blank" class="map-btn">
+                            <i class="fi fi-rr-marker"></i>
+                            銀杏公園
+                        </a>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">11:30 - 12:30</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-train-side"></i>
+                            前往熱田蓬萊軒
+                        </div>
+                        <div class="timeline-note">搭車約1小時</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">12:30 - 14:00</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-fish"></i>
+                            午餐：鰻魚三吃
+                        </div>
+                        <div class="timeline-note">不想吃鰻魚飯也可以吃棊子麵，點心可以吃 Imonne(義式冰淇淋大福) </div>
+                        <div class="status-badges">
+                            <span class="badge queue">
+                                <i class="fi fi-rr-hourglass"></i>
+                                可能排隊
+                            </span>
+                        </div>
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=熱田蓬萊軒" target="_blank" class="map-btn">
+                            <i class="fi fi-rr-marker"></i>
+                            餐廳位置
+                        </a>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">14:00 - 15:00</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-home"></i>
+                            熱田神宮
+                        </div>
+                        <div class="timeline-note">走路過去看神宮 約1小時 (白鳥庭園可看可不看 要看的話多1.5hr)</div>
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=熱田神宮" target="_blank" class="map-btn">
+                            <i class="fi fi-rr-marker"></i>
+                            神宮位置
+                        </a>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">15:00 - 15:30</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-subway"></i>
+                            前往名古屋城
+                        </div>
+                        <div class="timeline-note">地鐵約30分鐘</div>
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=名古屋城" target="_blank" class="map-btn">
+                            <i class="fi fi-rr-marker"></i>
+                            名古屋城
+                        </a>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">15:30 - 18:00</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-castle"></i>
+                            名古屋城 &amp; 名城公園
+                        </div>
+                        <div class="timeline-note">走累了可以考慮提早搭車去名古屋JR門塔店(最高的星巴克)</div>
+                        <a href="https://maps.app.goo.gl/iWFbZM42DiVfwSfp9" target="_blank" class="map-btn">
+                            <i class="fi fi-rr-marker"></i>
+                          名城公園 
+                        </a>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">18:00 - 18:30</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-subway"></i>
+                            前往晚餐餐廳
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">18:30 - 20:00</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-fish"></i>
+                            晚餐：燒魚
+                        </div>
+                        <div class="timeline-note">Yakiuo Ishikawa 約¥13,600/人</div>
+                        <div class="status-badges">
+                            <span class="badge confirmed">
+                                <i class="fi fi-rr-check"></i>
+                                已預訂
+                            </span>
+                        </div>
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=Yakiuo+Ishikawa+Nagoya" target="_blank" class="map-btn">
+                            <i class="fi fi-rr-marker"></i>
+                            餐廳位置
+                        </a>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">20:00</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-bed-alt"></i>
+                            回飯店休息
+                        </div>
+                        <div class="timeline-note">王子飯店天空塔</div>
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=名古屋王子大飯店天空塔" target="_blank" class="map-btn">
+                            <i class="fi fi-rr-marker"></i>
+                            飯店位置
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="day-divider"></div>
+        
+        <!-- ==================== DAY 4 ==================== -->
+        <section id="day4" class="day-section">
+            <!-- Day Header -->
+            <div class="day-header fade-in">
+                <div class="day-title">
+                    <span class="day-number">DAY 4</span>
+                    <span class="day-date">11/30 (日)</span>
+                </div>
+                <div class="day-subtitle">犬山城 → 逛街購物</div>
+            </div>
+            
+            <!-- Timeline -->
+            <div class="timeline-section fade-in">
+                <h2 class="section-title">
+                    <i class="fi fi-rr-clock"></i>
+                    今日行程
+                </h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-time">08:00 - 08:30</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-coffee"></i>
+                            吃完早餐就出門
+                        </div>
+                        <div class="timeline-note">可以考慮 8:00~8:30 就出發 吃完午餐早點回來逛街</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">08:30 - 09:30</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-train-side"></i>
+                            前往犬山城
+                        </div>
+                        <div class="timeline-note">搭車約1小時</div>
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=犬山城" target="_blank" class="map-btn">
+                            <i class="fi fi-rr-marker"></i>
+                            犬山城
+                        </a>                        
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">09:30 - 11:30</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-castle"></i>
+                            犬山城 &amp; 犬山城下町
+                        </div>
+                        <div class="timeline-note">國寶級古城,老街很好逛</div>
+                        <a href="https://bobbyfun.tw/inuyama-castle-town/" target="_blank" class="map-btn">
+                            <i class="fi fi-rr-marker"></i>
+                            行程參考
+                        </a>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">11:30 - 12:30</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-bowl-chopsticks-noodles"></i>
+                            午餐：拉麵
+                        </div>
+                        <div class="timeline-note">Seimen Misaku 約¥1,500/人</div>
+                        <div class="status-badges">
+                            <span class="badge queue">
+                                <i class="fi fi-rr-clock"></i>
+                                營業時間 10:30-14:00 
+                            </span>
+                        </div>
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=Seimen+Misaku" target="_blank" class="map-btn">
+                            <i class="fi fi-rr-marker"></i>
+                            拉麵店
+                        </a>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">12:30 - 13:30</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-subway"></i>
+                            前往市區
+                        </div>
+                        <div class="timeline-note">往上前津/榮站方向</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">13:30 - 18:00</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-shopping-bag"></i>
+                            自由逛街
+                        </div>
+                        <div class="timeline-note">大須商店街 或 榮站商圈(拔不想逛街可以把他丟到 豐田博物館)</div>
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=大須商店街" target="_blank" class="map-btn">
+                            <i class="fi fi-rr-marker"></i>
+                            大須商店街
+                        </a>
+                        <a href="https://maps.app.goo.gl/SdXpAW3eQxqTrDd3A" target="_blank" class="map-btn">
+                            <i class="fi fi-rr-marker"></i>
+                            豐田博物館
+                        </a>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">18:00</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-utensils"></i>
+                            晚餐 (未預訂)
+                        </div>
+                        <div class="timeline-note">可在商店街附近用餐</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">20:00</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-bed-alt"></i>
+                            回飯店休息
+                        </div>
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=名古屋王子大飯店天空塔" target="_blank" class="map-btn">
+                            <i class="fi fi-rr-marker"></i>
+                            飯店位置
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="day-divider"></div>
+        
+        <!-- ==================== DAY 5 ==================== -->
+        <section id="day5" class="day-section">
+            <!-- Action Items -->
+            <div class="action-items fade-in">
+                <div class="action-title">
+                    <i class="fi fi-rr-exclamation"></i>
+                    待辦事項
+                </div>
+                <ul class="action-list">
+                    <li class="action-item">
+                        <input type="checkbox" id="task5-1" onclick="toggleTask(this)">
+                        <label for="task5-1">11:00前退房</label>
+                        <span class="action-badge urgent">退房日</span>
+                    </li>
+                    <li class="action-item">
+                        <input type="checkbox" id="task5-2" onclick="toggleTask(this)">
+                        <label for="task5-2">名鐵站寄放行李</label>
+                        <span class="action-badge soon">09:30</span>
+                    </li>
+                    <li class="action-item">
+                        <input type="checkbox" id="task5-3" onclick="toggleTask(this)">
+                        <label for="task5-3">15:40前往機場</label>
+                        <span class="action-badge urgent">重要</span>
+                    </li>
+                    <li class="action-item">
+                        <input type="checkbox" id="task5-4" onclick="toggleTask(this)">
+                        <label for="task5-4">機場買伴手禮</label>
+                        <span class="action-badge soon">4F</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Day Header -->
+            <div class="day-header fade-in">
+                <div class="day-title">
+                    <span class="day-number">DAY 5</span>
+                    <span class="day-date">12/01 (一)</span>
+                </div>
+                <div class="day-subtitle">最後購物 → 返回台灣</div>
+            </div>
+            
+            <!-- Timeline -->
+            <div class="timeline-section fade-in">
+                <h2 class="section-title">
+                    <i class="fi fi-rr-clock"></i>
+                    今日行程
+                </h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-time">06:30 - 09:30</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-coffee"></i>
+                            飯店早餐
+                        </div>
+                        <div class="timeline-note">吃完整理行李準備退房</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">09:30 - 10:00</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-suitcase-alt"></i>
+                            退房並寄放行李
+                        </div>
+                        <div class="timeline-note">名鐵名古屋站有置物櫃</div>
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=名鐵名古屋站" target="_blank" class="map-btn">
+                            <i class="fi fi-rr-marker"></i>
+                            名鐵名古屋站
+                        </a>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">10:00 - 12:00</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-shopping-bag"></i>
+                            最後購物
+                        </div>
+                        <div class="timeline-note">名古屋站、大須或榮站</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">12:00</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-pot"></i>
+                            午餐：火鍋
+                        </div>
+                        <div class="timeline-note">馬喰一代 約¥3,410/人</div>
+                        <div class="status-badges">
+                            <span class="badge confirmed">
+                                <i class="fi fi-rr-check"></i>
+                                已預訂
+                            </span>
+                        </div>
+                        <a href="https://maps.app.goo.gl/gvLxG72jmymAz8WRA" target="_blank" class="map-btn">
+                            <i class="fi fi-rr-marker"></i>
+                            餐廳位置
+                        </a>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">15:40</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-train-side"></i>
+                            前往中部國際機場
+                        </div>
+                        <div class="timeline-note">名鐵特急約30-40分鐘</div>
+                        <a href="https://maps.app.goo.gl/ZFQ9XEXdkS9hkcYx5" target="_blank" class="map-btn">
+                            <i class="fi fi-rr-marker"></i>
+                            機場位置
+                        </a>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">16:40</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-plane-arrival"></i>
+                            抵達機場
+                        </div>
+                        <div class="timeline-note">Check-in、買伴手禮</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">19:40</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-plane-departure"></i>
+                            NGO → TPE
+                        </div>
+                        <div class="flight-info">
+                            <div class="flight-info-row">
+                                <strong>航班:</strong>
+                                <span class="flight-highlight">CI155</span>
+                            </div>
+                            <div class="flight-info-row">
+                                <strong>起飛:</strong>
+                                <span>中部機場T2 → 19:40</span>
+                            </div>
+                            <div class="flight-info-row">
+                                <strong>抵達:</strong>
+                                <span>桃園機場T1 → 22:15</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">22:15</div>
+                        <div class="timeline-event">
+                            <i class="fi fi-rr-home"></i>
+                            抵達台灣 🏠
+                        </div>
+                        <div class="timeline-note">機場接送回家,旅程結束!</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+    
+    <script>
+        // Toggle task completion
+        function toggleTask(checkbox) {
+            const item = checkbox.closest('.action-item');
+            if (checkbox.checked) {
+                item.classList.add('checked');
+                localStorage.setItem(checkbox.id, 'checked');
+            } else {
+                item.classList.remove('checked');
+                localStorage.removeItem(checkbox.id);
+            }
+        }
+        
+        // Load saved tasks
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.action-item input[type="checkbox"]').forEach(checkbox => {
+                if (localStorage.getItem(checkbox.id) === 'checked') {
+                    checkbox.checked = true;
+                    checkbox.closest('.action-item').classList.add('checked');
+                }
+            });
+            
+            // Smooth scroll for navigation
+            document.querySelectorAll('.nav-menu-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        
+                        // Update active state
+                        document.querySelectorAll('.nav-menu-btn').forEach(b => b.classList.remove('active'));
+                        this.classList.add('active');
+                    }
+                });
+            });
+            
+            // Highlight current section
+            const observerOptions = {
+                root: null,
+                rootMargin: '-25% 0px -65% 0px',
+                threshold: 0
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        document.querySelectorAll('.nav-menu-btn').forEach(btn => {
+                            btn.classList.remove('active');
+                            if (btn.getAttribute('href') === `#${id}`) {
+                                btn.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.day-section').forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+
+
+
+            <script></script>
+        
+    
+
+                 
+            <script></script>
+        
+    
+</body>
